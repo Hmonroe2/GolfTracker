@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import Profile from './Profile';
 import golfCart from './images/golf-cart.png';
+import ModalDemo from './Modal';
 
 export default function App() {
   const [isHappy, setIsHappy] = useState(true);
@@ -14,12 +15,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
           data={isHappy}
-          options={{ title: 'Home'}}
-        />
+          options={{ title: 'Home' }}
+        /> */}
         <Stack.Screen
           name="Profile"
           component={Profile}

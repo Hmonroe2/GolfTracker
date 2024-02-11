@@ -3,17 +3,19 @@ import { Button, View, StyleSheet, Pressable, Text, Image } from 'react-native';
 import Modal from 'react-native-modal';
 import LoginForm from './Form';
 import Profile from './Profile';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const ModalDemo = ({ navigation }) => {
+const ModalDemo = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
   };
-   const onPress = () => {
-     navigation.navigate('Profile', { title: 'Profile' });
-   };
+  const navigation = useNavigation();
+  const onPress = () => {
+    toggleModal();
+    navigation.navigate('Profile', { title: 'Profile' });
+  };
   return (
     <View>
       <Pressable style={styles.button} onPress={toggleModal}>
@@ -47,7 +49,7 @@ const ModalDemo = ({ navigation }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    display:'flex',
+    display: 'flex',
     flex: 1,
     backgroundColor: 'black',
     alignItems: 'center',
@@ -59,12 +61,12 @@ const styles = StyleSheet.create({
     width: '10rem',
     margin: '10px',
     textAlign: 'center',
-    borderRadius:'10px',
+    borderRadius: '10px',
   },
   text: {
     // textAlign:'center',
     color: 'white',
     margin: '10px',
-  }
+  },
 });
 export default ModalDemo;

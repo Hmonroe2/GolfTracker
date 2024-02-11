@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, View, Button, StyleSheet, Image } from 'react-native';
 import ModalDemo from './Modal';
 import LoginForm from './Form';
+import Profile from './Profile';
 
 // import golfer from './Golfer'
 
@@ -22,7 +23,7 @@ const HomeScreen = ({ data, navigation }) => {
 
   const styles = StyleSheet.create({
     container: {
-      display:'flex',
+      display: 'flex',
       backgroundColor: 'black',
       flex: 1,
       alignItems: 'center',
@@ -30,22 +31,21 @@ const HomeScreen = ({ data, navigation }) => {
     },
     text: {
       fontSize: '20px',
-      fontWeight:'bold',
-      color:'white', 
+      fontWeight: 'bold',
+      color: 'white',
       borderWidth: 2,
-     
     },
     image: {
       // alignItems:'center',
-      backgroundColor:'black',
+      backgroundColor: 'black',
       height: '400px',
       width: '400px ',
-      marginRight:'5rem'
-    }
+      marginRight: '5rem',
+    },
   });
   return (
     <View style={styles.container}>
-      <Image style={styles.image } source={require('./cartoon1.png')} />
+      <Image style={styles.image} source={require('./cartoon1.png')} />
       <Text style={styles.text}> Welcome </Text>
       <ModalDemo />
       <Text>

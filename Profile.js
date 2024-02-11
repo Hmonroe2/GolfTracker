@@ -12,6 +12,8 @@ import {
   TextInput,
 } from 'react-native';
 
+
+
 const Profile = ({ navigation, route }) => {
   // const [number, setNumber] = useState('');
 
@@ -19,69 +21,84 @@ const Profile = ({ navigation, route }) => {
     container: {
       display: 'flex',
       alignItems: 'center',
+      flex: 1,
+      backgroundColor: 'black',
+      color: 'white',
+      justifyContent: "center",
       flexDirection: 'column',
-      flex: 1
+      border:'10px, solid, White ', 
+      
     },
     text: {
+      color: 'white',
       fontSize: 20,
     },
     input: {
       backgroundColor: 'red',
     },
+    clubBox: {
+      height: '35rem',
+      width:'20rem', 
+      display:'flex',
+      justifyContent: 'space-evenly ',
+      alignItems:'center',
+      border: '10px solid white',
+      alignContent:"space-around"
+    }
   });
 
-  // const golfer = {
-  //   id: 1,
-  //   name: "Hunter",
-  //   golfBag: {
-  //     Driver: 250,
-  //     '3-Wood': 200,
-  //     '5H': 190,
-  //       4: 180,
+  const [golfer, setGolfer] = useState({
+    id: 1,
+    name: 'Hunter',
+      golfBag: [
+        {driver: 200},
+        { '3wood': `1300 yards` },
+        
+      ],
+  });
 
-  //     }
-  const [golfer, setGolfer] = useState({});
+  const displayGolfer = () => {
+    
+  }
 
   const createGolfer = (name) => {
     setGolfer({
       id: 1,
       name: name,
+      golfBag: [
+        {
+          driver: 100,
+          '3wood': `1300 yards`
+        },
+      ],
     });
-  };
-
+  }
+  const bagCreate = golfer.golfBag.map((bag) => bag); 
+  const createBag = bagCreate.map(bag => bag)
+  console.log(golfer.golfBag.map((bag) => bag))
+  console.log(bagCreate[0])
+  console.log(createBag[0])
+      
   return (
     <View style={styles.container}>
-      <Text style={(styles.container, console.log(golfer))}>
-        console.log(golfer)
-        <Text style={styles.text}>Clubs</Text>
-        {/* <Text> {setGolfer('hrelo')} </Text> */}
-        {/* <TextInput
-          style={styles.input}
-          label={'hello'}
-          onChangeText={(newText) => setNumber(newText)}
-          defaultValue={golfer}
-        /> */}
-        <Button title="Create a Golfer rdfgdfg dfgdf " onPress={() => createGolfer()} />
-        <Text> Driver: {golfer.name} </Text>
-        <Text> 3wood: {golfer.id} </Text>
-        <Text> Hybrid: </Text>
-        <Text> 5 Iron </Text>
-        <Text> 6 Iron </Text>
-        <Text> 7 Iron </Text>
-        <Text> 8 Iron </Text>
-        <Text> 9 Iron </Text>
-        <Text> Pitch </Text>
-        <Text> Sand </Text>
-        <Text> 54 </Text>
-        <Text> 56 </Text>
-      </Text>
+      <View style={styles.clubBox}>
+        <Text style={styles.text}> Clubs </Text>
+        <Text style={styles.text} data={bagCreate['driver']}>
+         this is bag  {createBag[1]['3wood']}
+        </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+        <Text style={styles.text}>Driver {golfer.golfBag.driver} yards </Text>
+      </View>
     </View>
   );
-};
-
+  }
+  
 export default Profile;
 
-// <Image
-//           source={require('./images/golf-cart.png')}
-//           style={{ width: 200, height: 200 }}
-//         />
+
