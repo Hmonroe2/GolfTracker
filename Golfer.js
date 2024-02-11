@@ -1,16 +1,10 @@
 import React from 'react';
-import { useState } from 'react'; 
-
-
-// const [golfer, setGolfer] = useState({});
+import { useState } from 'react';
 
 // const createGolfer = (name) => {
 //   setGolfer({
 //     id: 1,
 //     name: name,
-//     golfBag: {}, 
+//     golfBag: {},
 //   });
 // };
-
-// export default golfer;
-// export default createGolfer; 

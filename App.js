@@ -5,19 +5,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import Profile from './Profile';
-import golfCart from './images/golf-cart.png'
+import golfCart from './images/golf-cart.png';
 
 export default function App() {
   const [isHappy, setIsHappy] = useState(true);
   const Stack = createNativeStackNavigator();
-  const cart = golfCart
+  const cart = golfCart;
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
-          // options={{ title: 'Home'}}
+          data={isHappy}
+          options={{ title: 'Home'}}
         />
         <Stack.Screen
           name="Profile"

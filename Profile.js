@@ -14,17 +14,13 @@ import {
 
 const Profile = ({ navigation, route }) => {
   // const [number, setNumber] = useState('');
-  
-
-  const setYards = () => {
-    clubs.driver = 23;
-  };
 
   const styles = StyleSheet.create({
     container: {
       display: 'flex',
       alignItems: 'center',
       flexDirection: 'column',
+      flex: 1
     },
     text: {
       fontSize: 20,
@@ -65,7 +61,7 @@ const Profile = ({ navigation, route }) => {
           onChangeText={(newText) => setNumber(newText)}
           defaultValue={golfer}
         /> */}
-        <Button title="Create a Golfer" onPress={() => createGolfer()} />
+        <Button title="Create a Golfer rdfgdfg dfgdf " onPress={() => createGolfer()} />
         <Text> Driver: {golfer.name} </Text>
         <Text> 3wood: {golfer.id} </Text>
         <Text> Hybrid: </Text>
